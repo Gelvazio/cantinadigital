@@ -1,30 +1,30 @@
 /* Googlefont Poppins CDN Link */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
-html, body {
+html,
+body {
     width: 100%;
-    height: 100%;    
+    height: 100%;
 }
 
-.content {    
+.content {
     z-index: 0;
-    display: block; 
+    display: block;
     /* opacity: 0;    */
-    
 }
 
 .sidebar {
     position: fixed;
     height: 100%;
     width: 240px;
-    background: #0A2558;
+    background: #0a2558;
     transition: all 0.5s ease;
 }
 
@@ -43,7 +43,7 @@ html, body {
     font-weight: 500;
     color: #fff;
     min-width: 60px;
-    text-align: center
+    text-align: center;
 }
 
 .sidebar .logo-details .logo_name {
@@ -54,8 +54,8 @@ html, body {
 
 .sidebar .logo-details .logo_name img {
     border-radius: 50%;
-    width:50px; 
-    height:50px;
+    width: 50px;
+    height: 50px;
 }
 
 .sidebar .nav-links {
@@ -78,11 +78,11 @@ html, body {
 }
 
 .sidebar .nav-links li a.active {
-    background: #081D45;
+    background: #081d45;
 }
 
 .sidebar .nav-links li a:hover {
-    background: #081D45;
+    background: #081d45;
 }
 
 .sidebar .nav-links li i {
@@ -114,7 +114,7 @@ html, body {
     transition: all 0.5s ease;
 }
 
-.sidebar.active~.home-section {
+.sidebar.active ~ .home-section {
     width: calc(100% - 60px);
     left: 60px;
 }
@@ -135,7 +135,7 @@ html, body {
     transition: all 0.5s ease;
 }
 
-.sidebar.active~.home-section nav {
+.sidebar.active ~ .home-section nav {
     left: 60px;
     width: calc(100% - 60px);
 }
@@ -165,8 +165,8 @@ nav .search-box input {
     height: 100%;
     width: 100%;
     outline: none;
-    background: #F5F6FA;
-    border: 2px solid #EFEEF1;
+    background: #f5f6fa;
+    border: 2px solid #efeef1;
     border-radius: 6px;
     font-size: 18px;
     padding: 0 15px;
@@ -176,7 +176,7 @@ nav .search-box .bx-search {
     position: absolute;
     height: 40px;
     width: 40px;
-    background: #2697FF;
+    background: #2697ff;
     right: 5px;
     top: 50%;
     transform: translateY(-50%);
@@ -191,8 +191,8 @@ nav .search-box .bx-search {
 .home-section nav .profile-details {
     display: flex;
     align-items: center;
-    background: #F5F6FA;
-    border: 2px solid #EFEEF1;
+    background: #f5f6fa;
+    border: 2px solid #efeef1;
     border-radius: 6px;
     height: 50px;
     min-width: 190px;
@@ -264,7 +264,7 @@ nav .profile-details i {
 .home-content .box .indicator i {
     height: 20px;
     width: 20px;
-    background: #8FDACB;
+    background: #8fdacb;
     line-height: 20px;
     text-align: center;
     border-radius: 50%;
@@ -295,8 +295,8 @@ nav .profile-details i {
 }
 
 .home-content .box .cart.two {
-    color: #2BD47D;
-    background: #C0F2D8;
+    color: #2bd47d;
+    background: #c0f2d8;
 }
 
 .home-content .box .cart.three {
@@ -319,7 +319,6 @@ nav .profile-details i {
     justify-content: space-between;
     /* padding: 0 20px; */
 }
-
 
 /* left box */
 
@@ -369,7 +368,7 @@ nav .profile-details i {
 
 .sales-boxes .box .button a {
     color: #fff;
-    background: #0A2558;
+    background: #0a2558;
     padding: 4px 12px;
     font-size: 15px;
     font-weight: 400;
@@ -381,7 +380,6 @@ nav .profile-details i {
 .sales-boxes .box .button a:hover {
     background: #0d3073;
 }
-
 
 /* Right box */
 
@@ -423,7 +421,6 @@ nav .profile-details i {
     color: #333;
 }
 
-
 /* Responsive Media Query */
 
 @media (max-width: 1240px) {
@@ -437,7 +434,7 @@ nav .profile-details i {
         width: calc(100% - 60px);
         left: 60px;
     }
-    .sidebar.active~.home-section {
+    .sidebar.active ~ .home-section {
         /* width: calc(100% - 220px); */
         overflow: hidden;
         left: 220px;
@@ -446,7 +443,7 @@ nav .profile-details i {
         width: calc(100% - 60px);
         left: 60px;
     }
-    .sidebar.active~.home-section nav {
+    .sidebar.active ~ .home-section nav {
         width: calc(100% - 220px);
         left: 220px;
     }
@@ -493,7 +490,11 @@ nav .profile-details i {
         width: 100%;
         margin-bottom: 15px;
     }
-    .sidebar.active~.home-section nav .profile-details {
+    .sidebar.active ~ .home-section nav .profile-details {
         display: none;
     }
+}
+
+.menu-lateral {
+    padding: 0;
 }

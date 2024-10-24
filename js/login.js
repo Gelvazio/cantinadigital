@@ -10,11 +10,13 @@ function onloadLogin () {
 function validaSessao (pagina) {
   const token_logado = sessionStorage.getItem('token_logado')
   if (token_logado == '54a80097f23822cb26b6d5a980968601') {
-    // redireciona para a pagina home pois usuario ja esta logado
-    atualizaMenu()
-
     // Atualiza a aba ativa
     pagina = pagina.slice(0, -5)
+
+    atualizaDadosPagina(pagina)
+
+    // redireciona para a pagina home pois usuario ja esta logado
+    atualizaMenu()
 
     document.querySelector('#aba-' + pagina + ' a').classList.add('active')
 
@@ -22,6 +24,37 @@ function validaSessao (pagina) {
   } else {
     window.location.href = 'login.html'
   }
+}
+
+function atualizaDadosPagina (pagina) {
+  let tituloPagina = pagina
+  if (pagina == 'index') {
+    tituloPagina = 'Principal'
+  } else if (pagina == 'notasfiscais') {
+    tituloPagina = 'Notas Fiscais'
+  } else {
+    tituloPagina = tituloPagina[0].toUpperCase() + tituloPagina.substring(1)
+  }
+
+  document.querySelector('.sidebar').innerHTML = `
+                <div class="logo-details">
+                    <i class='bx bx-analyse'></i>
+                    <span class="logo_name">
+                    <img src="images/logo.png">
+                    </span>    
+                </div>
+                <ul class="nav-links menu-lateral" id="menu"></ul>`
+
+  document.querySelector('#nav-pagina').innerHTML = `
+                <div class="sidebar-button">
+                    <i class='bx bx-menu sidebarBtn'></i>
+                    <span class="dashboard">${tituloPagina}</span>
+                </div>
+                <div class="profile-details">
+                    <img src="images/profile.png" alt="">
+                    <span class="admin_name">Cantina Digital</span>
+                    <i class='bx bx-chevron-down'></i>
+                </div>`
 }
 
 function validaSessaoSemLogin (pagina) {
