@@ -91,6 +91,12 @@ function atualizaMenu () {
                             <span class="links_name">Principal</span>
                         </a>
                     </li>
+                    <li id="aba-pedidos">
+                        <a href="pedidos.html">
+                            <i class='bx bx-grid-alt'></i>
+                            <span class="links_name">Pedidos</span>
+                        </a>
+                    </li>
                     <li id="aba-produtos">
                         <a href="${baseUrl}produtos.html">
                             <i class='bx bx-box'></i>

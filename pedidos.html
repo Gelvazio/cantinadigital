@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cantina Digital</title>
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Icone -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+
+    <!-- NOVO BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/loading.css">
+
+    <link rel="stylesheet" href="css/pedidos.css">
+</head>
+
+<script src="js/login.js" defer async></script>
+<script src="js/pedidos.js" defer async></script>
+
+<body onload="validaSessao('pedidos.html')">
+    <div class="box-load">
+        <div class="pre"></div>
+        <div class="mensagem-loading">Carregando página, aguarde....</div>
+    </div>
+    <div class="content">
+        <div class="sidebar"></div>
+
+        <section class="home-section">
+            <nav id="nav-pagina"></nav>
+
+            <div class="home-content" id="home-content">
+
+                <div class="overview-boxes"
+                    style="display: flex; justify-content: space-around;align-items: center;width: 100%;gap:15px;">
+                    <div class="box" style="width: 100%;background-color: aqua;">
+                        <div class="right-side">
+                            <div class="number">Preparação</div>
+                            <div class="box-topic">Tempo Médio: 3 horas e 25 minutos</div>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <div class="right-side">
+                            <div class="box-topic">Aguardando Preparação</div>
+                            <div class="number">15 Pedidos</div>
+                            <div class="acoes-consulta">
+                                <button class="btn btn-success" onclick="listarPedidos(1)">Detalhar Pedidos</button>
+                            </div>
+                            <hr>
+                            <div class="indicator">
+                                <i class='bx bx-up-arrow-alt'></i>
+                                <span class="text">Atualizado em 05/03/2024 as 20:04</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="right-side">
+                            <div class="box-topic">Em Preparação</div>
+                            <div class="number">7 Pedidos</div>
+                            <div class="acoes-consulta">
+                                <button class="btn btn-success" onclick="listarPedidos(1)">Detalhar Pedidos</button>
+                            </div>
+                            <hr>
+                            <div class="indicator">
+                                <i class='bx bx-up-arrow-alt'></i>
+                                <span class="text">Atualizado em 05/03/2024 as 20:04</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="right-side">
+                            <div class="box-topic">Pronto para Separação</div>
+                            <div class="number">25 Pedidos</div>
+                            <div class="acoes-consulta">
+                                <button class="btn btn-success" onclick="listarPedidos(1)">Detalhar Pedidos</button>
+                            </div>
+                            <hr>
+                            <div class="indicator">
+                                <i class='bx bx-up-arrow-alt'></i>
+                                <span class="text">Atualizado em 05/03/2024 as 20:04</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overview-boxes"
+                    style="display: flex; justify-content: center;align-items: center;width: 100%;">
+                    <div class="box" style="width: 100%;background-color: aqua;">
+                        <div class="right-side">
+                            <div class="number">Separação</div>
+                            <div class="box-topic">Tempo Médio: 3 horas e 25 minutos</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overview-boxes"
+                    style="display: flex; justify-content: center;align-items: center;width: 100%;">
+                    <div class="box" style="width: 100%;background-color: aqua;">
+                        <div class="right-side">
+                            <div class="number">Entrega</div>
+                            <div class="box-topic">Tempo Médio: 3 horas e 25 minutos</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overview-boxes">
+                    <div class="box">
+                        <div class="right-side">
+                            <div class="box-topic">Faturamento</div>
+                            <div class="number">R$ 7.721,00</div>
+                            <div class="indicator">
+                                <i class='bx bx-up-arrow-alt'></i>
+                                <span class="text">Atualizado em 08/03/2024</span>
+                            </div>
+                        </div>
+                        <i class='bx bx-cart-alt cart'></i>
+                    </div>
+                    <div class="box">
+                        <div class="right-side">
+                            <div class="box-topic">Despesas</div>
+                            <div class="number">R$ 6.721,00</div>
+                            <div class="indicator">
+                                <i class='bx bx-down-arrow-alt down'></i>
+                                <span class="text">Atualizado em 08/03/2024</span>
+                            </div>
+                        </div>
+                        <i class='bx bxs-cart-download cart four'></i>
+                    </div>
+                    <div class="box">
+                        <div class="right-side">
+                            <div class="box-topic">Receitas</div>
+                            <div class="number">R$ 1000,00</div>
+                            <div class="indicator">
+                                <i class='bx bx-down-arrow-alt down'></i>
+                                <span class="text">Atualizado em 07/09/2023</span>
+                            </div>
+                        </div>
+                        <i class='bx bxs-cart-add cart two'></i>
+                    </div>
+                    <div class="box">
+                        <div class="right-side">
+                            <div class="box-topic">Lucro Líquido</div>
+                            <div class="number">R$ 1000,00</div>
+                            <div class="indicator">
+                                <i class='bx bx-down-arrow-alt down'></i>
+                                <span class="text">Atualizado em 07/09/2023</span>
+                            </div>
+                        </div>
+                        <i class='bx bxs-cart-add cart two'></i>
+                    </div>
+                </div>
+
+                <div class="sales-boxes" style="display: none;">
+                    <div class="recent-sales box">
+                        <div class="title">Produtos Bingo</div>
+                        <div class="sales-details">
+                            <ul class="details">
+                                <li class="topic">Doador</li>
+                                <li><a href="#">João da Silva</a></li>
+                                <li><a href="#">João da Silva</a></li>
+                                <li><a href="#">João da Silva</a></li>
+                                <li><a href="#">João da Silva</a></li>
+                                <li><a href="#">João da Silva</a></li>
+                            </ul>
+                            <ul class="details">
+                                <li class="topic">Produto</li>
+                                <li><a href="#">Cesta de Café da Manhã</a></li>
+                                <li><a href="#">Cesta de Café da Manhã</a></li>
+                                <li><a href="#">Cesta de Café da Manhã</a></li>
+                                <li><a href="#">Cesta de Café da Manhã</a></li>
+                                <li><a href="#">Cesta de Café da Manhã</a></li>
+                            </ul>
+                            <ul class="details">
+                                <li class="topic">Custo</li>
+                                <li><a href="#">R$ 0,00</a></li>
+                                <li><a href="#">R$ 0,00</a></li>
+                                <li><a href="#">R$ 0,00</a></li>
+                                <li><a href="#">R$ 0,00</a></li>
+                                <li><a href="#">R$ 0,00</a></li>
+                            </ul>
+                            <ul class="details">
+                                <li class="topic">Valor Item</li>
+                                <li><a href="#">R$ 150,00</a></li>
+                                <li><a href="#">R$ 150,00</a></li>
+                                <li><a href="#">R$ 250,00</a></li>
+                                <li><a href="#">R$ 150,00</a></li>
+                                <li><a href="#">R$ 50,00</a></li>
+                            </ul>
+                            <ul class="details">
+                                <li class="topic">Lucro Rodada</li>
+                                <li><a href="#">R$ 195,00</a></li>
+                                <li><a href="#">R$ 250,00</a></li>
+                                <li><a href="#">R$ 350,00</a></li>
+                                <li><a href="#">R$ 450,00</a></li>
+                                <li><a href="#">R$ 550,00</a></li>
+                            </ul>
+                        </div>
+                        <div class="button">
+                            <a href="#">Lucro Total R$ 1234,00</a>
+                        </div>
+                    </div>
+                    <div class="top-sales box">
+                        <div class="title">Maior Lucro Por Produto</div>
+                        <ul class="top-sales-details">
+                            <li>
+                                <a href="#">
+                                    <!-- <img src="images/sunglasses.jpg" alt=""> -->
+                                    <span class="product">Pasteis</span>
+                                </a>
+                                <span class="price">R$ 2.558,00</span>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <!--<img src="images/jeans.jpg" alt="">-->
+                                    <span class="product">Bebidas</span>
+                                </a>
+                                <span class="price">R$ 1.567,00</span>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <!-- <img src="images/nike.jpg" alt="">-->
+                                    <span class="product">Bingo</span>
+                                </a>
+                                <span class="price">R$ 1.234,00</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="overview-boxes">
+                    <!-- MODAL INICIO -->
+                    <dialog class="modal modal-pedido" id="modal-pedido">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <section class="modal-header">
+                                <h1 class="modal-title" style="text-align: center;">Pedidos</h1>
+                                <button onclick="fecharModal()" class="btn btn-danger">
+                                    <span class="btn-close-modal">&times;</span>
+                                </button>
+                            </section>
+                            <hr>
+
+                            <!-- CONSULTA DE PEDIDOS -->
+                            <div class="consulta">
+                                 <table class="table table-striped table-hover table-bordered caption-top">
+                                    <caption class="table-info text-center bg-primary"
+                                        style="color:aliceblue;font-size: 22px;text-align: center;">Pedidos</caption>
+                                    <thead class="table-primary">
+                                        <th>Pedido</th>
+                                        <th>Cliente</th>
+                                        <th>Status</th>
+                                        <th>Total</th>                                        
+                                        <th colspan="4" class="text-center">Ações</th>
+                                    </thead>
+                                    <tbody id="tabela-produtos">
+                                        <!-- SERA PREENCHIDO VIA JAVASCRIPT -->
+                                         <tr>
+                                            <td>1</td>
+                                            <td>Vinícius</td>
+                                            <td>Em preparação</td>                                            
+                                            <td>R$ 150,00</td>                                            
+                                            <td>
+                                                <button class="btn btn-warning" onclick="detalharPedido(1)">Itens</button>                                                
+                                            </td>
+                                         </tr>
+                                         <tr>
+                                            <td>2</td>
+                                            <td>Adriano</td>
+                                            <td>Em preparação</td>                                            
+                                            <td>R$ 250,00</td>                                            
+                                            <td>
+                                                <button>Detalhar Produtos</button>                                                
+                                            </td>
+                                         </tr>
+                                         <tr>
+                                            <td>3</td>
+                                            <td>Ryan</td>
+                                            <td>Em preparação</td>                                            
+                                            <td>R$ 150,00</td>                                            
+                                            <td>
+                                                <button>Detalhar Produtos</button>                                                
+                                            </td>
+                                         </tr>
+                                          <tr>
+                                            <td>4</td>
+                                            <td>Rômulo</td>
+                                            <td>Em preparação</td>                                            
+                                            <td>R$ 150,00</td>                                            
+                                            <td>
+                                                <button>Detalhar Produtos</button>                                                
+                                            </td>
+                                         </tr>
+                                    </tbody>
+                                </table>
+                                <hr>
+                            </div>
+                            
+
+                            <div class="modal-footer">
+                                <button class="btn btn-success"
+                                    onclick="confirmarModal()">Confirmar</button>
+                                <button class="btn btn-danger" onclick="fecharModal()">Fechar</button>
+                            </div>
+                        </div>
+                    </dialog>
+                    <!-- MODAL FIM -->
+                 </div>
+
+                 <div class="overview-boxes">
+                    <!-- MODAL INICIO -->
+                    <dialog class="modal modal-pedido" id="item-modal-pedido">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <section class="modal-header">
+                                <h1 class="modal-title">Itens do Pedido - 1</h1>
+                                <button onclick="fecharModalDetalhePedido()" class="btn btn-danger">
+                                    <span class="btn-close-modal">&times;</span>
+                                </button>
+                            </section>
+                            <hr>
+
+                            <!-- CONSULTA DE PEDIDOS -->
+                            <div class="consulta">
+                                 <table class="table table-striped table-hover table-bordered caption-top">
+                                    <caption class="table-info text-center bg-primary"
+                                        style="color:aliceblue;font-size: 22px;text-align: center;">Pedidos</caption>
+                                    <thead class="table-primary">
+                                        <th>Código</th>
+                                        <th>Descrição</th>
+                                        <th>Preço</th>
+                                        <th>Quantidade</th>
+                                        <th>Sub-Total</th>
+                                        <th colspan="4" class="text-center">Ações</th>
+                                    </thead>
+                                    <tbody id="tabela-produtos">
+                                        <!-- SERA PREENCHIDO VIA JAVASCRIPT -->
+                                         <tr>
+                                            <td>1</td>
+                                            <td>Pizza</td>
+                                            <td>R$ 150,00</td>                                            
+                                            <td>2</td>                                            
+                                            <td>R$ 300,00</td>                                            
+                                            <td>
+                                               <div class="acoes text-center">
+                                                    <button class="btn btn-warning" onclick="alterarProdutoPedido(codigoPedido, codigoProduto)">Alterar Qtde</button>
+                                                    <button  class="btn btn-danger" onclick="excluirProdutoPedido(codigoPedido, codigoProduto)">Excluir</button>
+                                                </div>                                                                                              
+                                            </td>
+                                         </tr>
+                                         <tr>
+                                            <td>2</td>
+                                            <td>Água Mineral</td>
+                                            <td>R$ 5,00</td>                                            
+                                            <td>2</td>                                            
+                                            <td>R$ 10,00</td>                                            
+                                            <td>
+                                               <div class="acoes text-center">
+                                                    <button class="btn btn-warning" onclick="alterarProdutoPedido(codigoPedido, codigoProduto)">Alterar Qtde</button>
+                                                    <button  class="btn btn-danger" onclick="excluirProdutoPedido(codigoPedido, codigoProduto)">Excluir</button>
+                                                </div>                                                                                              
+                                            </td>
+                                         </tr>
+                                         <tr>
+                                            <td>3</td>
+                                            <td>Coca-cola</td>
+                                            <td>R$ 15,00</td>                                            
+                                            <td>2</td>                                            
+                                            <td>R$ 30,00</td>                                            
+                                            <td>
+                                               <div class="acoes text-center">
+                                                    <button class="btn btn-warning" onclick="alterarProdutoPedido(codigoPedido, codigoProduto)">Alterar Qtde</button>
+                                                    <button  class="btn btn-danger" onclick="excluirProdutoPedido(codigoPedido, codigoProduto)">Excluir</button>
+                                                </div>                                                                                              
+                                            </td>
+                                         </tr>
+
+                                         <!-- TOTAIS DO PEDIDO -->
+                                         <tr>
+                                            <td align="right" class="total-pedido-texto" colspan="4"><b>Total:</b></td>                                            
+                                            <td align="right">
+                                                <span class="total-pedido-valor">R$ 450,00</span>
+                                            </td>
+                                         </tr>
+                                    </tbody>
+                                </table>
+                                <hr>
+                            </div>
+                            
+
+                            <div class="modal-footer">
+                                <button class="btn btn-success"
+                                    onclick="confirmarModal()">Confirmar</button>
+                                <button class="btn btn-danger" onclick="fecharModalDetalhePedido()">Fechar</button>
+                            </div>
+                        </div>
+                    </dialog>
+                    <!-- MODAL FIM -->
+                 </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".sidebarBtn");
+        sidebarBtn.onclick = function () {
+            sidebar.classList.toggle("active");
+            if (sidebar.classList.contains("active")) {
+                sidebarBtn.classList.replace("bx-menu","bx-menu-alt-right");
+            } else {
+                sidebarBtn.classList.replace("bx-menu-alt-right","bx-menu");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
