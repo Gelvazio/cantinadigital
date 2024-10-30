@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adriano - Programador Web</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Tema Claro */
+        body.white-theme {
+            background-color: #fff;
+            color: #333;
+        }
+        body.white-theme header {
+            background-color: #007BFF;
+            color: #fff;
+        }
+        body.white-theme .section h2 {
+            border-bottom: 2px solid #007BFF;
+        }
+        body.white-theme .skill, body.white-theme .project {
+            border: 1px solid #ddd;
+        }
+        body.white-theme footer {
+            background-color: #f1f1f1;
+        }
+
+        /* Tema Escuro */
+        body.dark-theme {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        body.dark-theme header {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+        }
+        body.dark-theme .section h2 {
+            border-bottom: 2px solid #bb86fc;
+        }
+        body.dark-theme .skill, body.dark-theme .project {
+            border: 1px solid #333;
+        }
+        body.dark-theme footer {
+            background-color: #1e1e1e;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+        .section img {
+            max-width: 100%;
+            height: auto;
+        }
+        .skills, .projects {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .skill, .project {
+            flex: 1 1 45%;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .contact-info {
+            list-style: none;
+            padding: 0;
+        }
+        .contact-info li {
+            margin-bottom: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        @media (max-width: 768px) {
+            .skill, .project {
+                flex: 1 1 100%;
+            }
+        }
+        .theme-toggle {
+            margin: 20px;
+            text-align: right;
+        }
+        .theme-toggle button {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .white-theme .theme-toggle button {
+            background-color: #007BFF;
+            color: #fff;
+        }
+        .dark-theme .theme-toggle button {
+            background-color: #bb86fc;
+            color: #121212;
+        }
+    </style>
+</head>
+<body class="white-theme">
+    <div class="theme-toggle">
+        <button onclick="toggleTheme()">Alternar Tema</button>
+    </div>
+    <header>
+        <h1>Adriano - Programador Web Especialista em PHP</h1>
+    </header>
+    <div class="container">
+        <section class="section about">
+            <h2>Sobre Mim</h2>
+            <p>Olá! Eu sou Adriano, um programador web com paixão por criar soluções eficientes e inovadoras. Tenho experiência em desenvolvimento de sites e aplicações web utilizando PHP, além de outras tecnologias e ferramentas do ecossistema web.</p>
+            <img src="adriano.jpg" alt="Adriano">
+        </section>
+
+        <section class="section skills">
+            <h2>Habilidades</h2>
+            <div class="skill">
+                <h3>Linguagens de Programação</h3>
+                <p>PHP, JavaScript, HTML, CSS</p>
+            </div>
+            <div class="skill">
+                <h3>Frameworks</h3>
+                <p>Laravel, Symfony</p>
+            </div>
+            <div class="skill">
+                <h3>Banco de Dados</h3>
+                <p>MySQL, PostgreSQL</p>
+            </div>
+            <div class="skill">
+                <h3>Ferramentas</h3>
+                <p>Git, Docker, Composer</p>
+            </div>
+            <div class="skill">
+                <h3>Outras Competências</h3>
+                <p>Integração de APIs, Desenvolvimento Ágil, Testes Automatizados</p>
+            </div>
+        </section>
+
+        <section class="section projects">
+            <h2>Projetos</h2>
+            <div class="project">
+                <h3>Projeto 1: Sistema de Gestão de Clientes</h3>
+                <p>Descrição: Um sistema completo para gerenciamento de clientes, com funcionalidades de cadastro, edição, exclusão e busca.</p>
+                <p>Tecnologias: PHP, Laravel, MySQL</p>
+                <a href="#">Ver Projeto</a>
+            </div>
+            <div class="project">
+                <h3>Projeto 2: Plataforma de E-commerce</h3>
+                <p>Descrição: Uma plataforma de e-commerce com funcionalidades de carrinho de compras, pagamento online e administração de produtos.</p>
+                <p>Tecnologias: PHP, Symfony, PostgreSQL</p>
+                <a href="#">Ver Projeto</a>
+            </div>
+            <div class="project">
+                <h3>Projeto 3: Blog Pessoal</h3>
+                <p>Descrição: Um blog pessoal com sistema de administração de posts e comentários.</p>
+                <p>Tecnologias: PHP, Laravel, MySQL</p>
+                <a href="#">Ver Projeto</a>
+            </div>
+        </section>
+
+        <section class="section contact">
+            <h2>Contato</h2>
+            <ul class="contact-info">
+                <li>Email: <a href="mailto:adriano@example.com">adriano@example.com</a></li>
+                <li>LinkedIn: <a href="https://linkedin.com/in/adriano">linkedin.com/in/adriano</a></li>
+                <li>GitHub: <a href="https://github.com/adriano">github.com/adriano</a></li>
+            </ul>
+        </section>
+    </div>
+    <footer>
+        &copy; 2024 Adriano - Todos os direitos reservados.
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            body.classList.toggle('white-theme');
+            body.classList.toggle('dark-theme');
+        }
+    </script>
+</body>
+</html>
